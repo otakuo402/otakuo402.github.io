@@ -1,11 +1,11 @@
-import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, Navigate, HashRouter } from 'react-router-dom';
 import './App.css';
 import { Homepage } from './Homepage';
 import { Blog } from './Blog';
 
 function App() {
   return (
-    <BrowserRouter history={window.history} basename={process.env.PUBLIC_URL}>
+    <HashRouter basename='/'>
       <div className="App">
         <header className="App-header">
           <Routes>
@@ -15,7 +15,7 @@ function App() {
           </Routes>
         </header>
       </div>
-    </BrowserRouter>
+    </HashRouter>
     
   );
 }

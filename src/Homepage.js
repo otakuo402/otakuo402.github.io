@@ -1,5 +1,6 @@
 import React from "react";
 import logo from './logo.svg';
+import { Link } from "react-router-dom";
 
 const Homepage =()=> {
         return <div>
@@ -16,13 +17,7 @@ const Homepage =()=> {
             Powered by React
             </a>
             <br/>
-            <a 
-            className="App-link"
-            href="/blog"
-            >
-                Visit the blog page!
-            </a>
-            
+            <Link to="/blog" className="App-link">Visit the blog page!</Link>
         </div>
 }
 
