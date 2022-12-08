@@ -4,10 +4,21 @@ import { Homepage } from './Homepage';
 import { Blog } from './Blog';
 import { Navigation } from './Navigation';
 import BlogPages from './BlogPages';
+import { useState } from 'react';
 
 function App() {
-  const markdownFiles = ['test', 'test2', 'README'];
-  const routeMarkdownFiles = markdownFiles.map((file, index) =>
+  const [markdowns, setMarkdowns] = useState([]);
+
+  fetch('/allFileNames.txt')
+  .then((r) => r.text())
+  .then(text  => {
+    var array = text.split(/\r?\n/);
+    array.pop();
+    setMarkdowns(array)
+  })
+  .catch(err => console.log(err));
+  
+  const routeMarkdownFiles = markdowns.map((file, index) =>
     <Route key={index} path={"blog/" + file} element={ <BlogPages post={file} /> } />
   );
 
