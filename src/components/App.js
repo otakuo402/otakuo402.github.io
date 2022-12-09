@@ -1,10 +1,12 @@
 import { Routes, Route, Navigate, HashRouter } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import '../styles/App.scss';
 import { Homepage } from './Homepage';
 import { Blog } from './Blog';
 import { Navigation } from './Navigation';
 import BlogPages from './BlogPages';
-import { useEffect, useState } from 'react';
+import { InvalidPage } from './InvalidPage';
+
 
 function App() {
   const [markdowns, setMarkdowns] = useState([]);
@@ -32,6 +34,7 @@ function App() {
         </div>
         <div className="App-body">
           <Routes>
+            <Route path="*" element={ <InvalidPage/> } />
             <Route path="/" element={ <Navigate to="/home" /> } />
             <Route path="blog" element={ <Blog/> } />
             <Route path="/home" element={ <Homepage/> } />

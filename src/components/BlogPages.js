@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'markdown-to-jsx';
 
 function BlogPages(props) {
 
@@ -15,7 +15,7 @@ function BlogPages(props) {
         .catch(err => console.log(err));
 
     return (
-        <ReactMarkdown children={post} /> 
+        <Markdown>{post}</Markdown>
     )
 }
 
