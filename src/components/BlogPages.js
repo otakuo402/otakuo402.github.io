@@ -14,6 +14,7 @@ function BlogPages(props) {
         })
         .catch(err => console.log(err));
 
+    document.title=props.post
     return (
         <Markdown>{post}</Markdown>
     )

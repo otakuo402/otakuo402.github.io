@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../styles/Blog.scss';
 
 const Blog =()=> {
+    document.title="Blog"
     return <div>
         <p>This is the text for the blog page</p>
         <div className="Blog-link-container"><Link to="/blog/README" className="Blog-link">README</Link></div>
