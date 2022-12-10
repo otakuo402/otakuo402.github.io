@@ -37,7 +37,7 @@ links = [linkElement.get_attribute('href') for linkElement in linkElements]
 for i in range(len(links)):
     links = driver.find_elements("xpath", "//a[@href]")
     link = links[i]
-    print("testing " + link.get_attribute("innerHTML"))
+    print("testing " + link.get_attribute("innerHTML") + " button")
     # Test Home button
     if "Home" in link.get_attribute("innerHTML"):
         link.click()
@@ -59,6 +59,6 @@ for i in range(len(links)):
             print("Error, page gives 404 and does not exist")
             exit(1)
         # print title
-        print(driver.title)
+        print("title: " + driver.title)
         driver.back()
 print("test completed")
